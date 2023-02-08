@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedMango_API", "RedMango_API\RedMango_API.csproj", "{50153E4A-BCB1-40C7-ADF6-C92F40D5F77B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50153E4A-BCB1-40C7-ADF6-C92F40D5F77B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50153E4A-BCB1-40C7-ADF6-C92F40D5F77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50153E4A-BCB1-40C7-ADF6-C92F40D5F77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50153E4A-BCB1-40C7-ADF6-C92F40D5F77B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3C6C302-D5C3-4E4E-B919-E5068E730A60}
+	EndGlobalSection
+EndGlobal
