@@ -30,7 +30,7 @@ namespace RedMango_API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetMenuItems()
         {
-            _response.Result = _context.MenutItems;
+            _response.Result = _context.MenuItems;
             _response.StatusCode = HttpStatusCode.OK;
             return Ok(_response);
         }
@@ -48,7 +48,7 @@ namespace RedMango_API.Controllers
                 _response.IsSuccess = false;
                 return BadRequest(_response);
             }
-            MenuItem menuItem = _context.MenutItems.FirstOrDefault(m => m.Id == id);
+            MenuItem menuItem = _context.MenuItems.FirstOrDefault(m => m.Id == id);
             if (id == 0)
             {
                 _response.StatusCode = HttpStatusCode.NotFound;
@@ -86,7 +86,7 @@ namespace RedMango_API.Controllers
                         Description = menuItemCreateDTO.Description,
                         Image = await _blobservice.UploadBlob(fileName, SD.SD_Storage_Conttainer, menuItemCreateDTO.File)
                     };
-                    _context.MenutItems.Add(menuItemToCreate);
+                    _context.MenuItems.Add(menuItemToCreate);
                     _context.SaveChanges();
                     _response.Result = menuItemToCreate;
                     _response.StatusCode = HttpStatusCode.Created;
@@ -122,7 +122,7 @@ namespace RedMango_API.Controllers
                         return BadRequest();
                     }
                     //Get Menu Item From Db
-                    MenuItem menuItemFromDb = await _context.MenutItems.FindAsync(id);
+                    MenuItem menuItemFromDb = await _context.MenuItems.FindAsync(id);
                     if (menuItemFromDb == null)
                     {
                         _response.StatusCode = HttpStatusCode.BadRequest;
@@ -147,7 +147,7 @@ namespace RedMango_API.Controllers
                     }
 
 
-                    _context.MenutItems.Update(menuItemFromDb);
+                    _context.MenuItems.Update(menuItemFromDb);
                     _context.SaveChanges();
                     _response.StatusCode = HttpStatusCode.NoContent;
                     return Ok(_response);
@@ -181,7 +181,7 @@ namespace RedMango_API.Controllers
                     return BadRequest();
                 }
                 //Ge Menu Item From Db
-                MenuItem menuItemFromDb = await _context.MenutItems.FindAsync(id);
+                MenuItem menuItemFromDb = await _context.MenuItems.FindAsync(id);
                 if (menuItemFromDb == null)
                 {
                     _response.StatusCode = HttpStatusCode.BadRequest;
@@ -191,7 +191,7 @@ namespace RedMango_API.Controllers
                 await _blobservice.DeleteBlob(menuItemFromDb.Image.Split('/').Last(), SD.SD_Storage_Conttainer);
                 int milliseconds = 2000;
                 Thread.Sleep(milliseconds);
-                _context.MenutItems.Remove(menuItemFromDb);
+                _context.MenuItems.Remove(menuItemFromDb);
                 _context.SaveChanges();
                 _response.StatusCode = HttpStatusCode.NoContent;
                 return Ok(_response);
